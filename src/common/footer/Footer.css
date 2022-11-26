@@ -1,0 +1,20 @@
+footer {
+    background-color: #0f3460;
+    padding: 10px 0;
+    color: #fff;
+  }
+  footer h1 {
+    margin-bottom: 30px;
+    color: #e94560;
+    font-style: italic;
+  }
+  footer .img {
+    background-color: #239216;
+    padding: 15px 20px;
+    border-radius: 20px;
+  }
+  footer .container {
+      margin: 1rem;
+      display: grid;
+      grid-template-columns: 25% 25% 25% 20%;  
+  }

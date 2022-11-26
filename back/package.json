@@ -1,0 +1,31 @@
+{
+  "name": "ciclo_4",
+  "version": "1.0.0",
+  "description": "initial ecommerce for clothes",
+  "main": "server.js",
+  "scripts": {
+    "start": "node server.js",
+    "dev": "SET NODE_ENV=DEVELOPMENT& nodemon server",
+    "prod": "SET NODE_ENV=PRODUCTION& nodemon server"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/smgonzalezr/ciclo_4.git"
+  },
+  "author": "Saud Mauricio Gonzalez",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/smgonzalezr/ciclo_4/issues"
+  },
+  "homepage": "https://github.com/smgonzalezr/ciclo_4#readme",
+  "dependencies": {
+    "dotenv": "^16.0.3",
+    "esm": "^3.2.25",
+    "express": "^4.18.2",
+    "mongoose": "^6.7.1",
+    "node-fetch": "^3.3.0"
+  },
+  "devDependencies": {
+    "nodemon": "^2.0.20"
+  }
+}
