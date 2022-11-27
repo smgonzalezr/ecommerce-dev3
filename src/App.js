@@ -4,15 +4,29 @@ import Footer from './common/footer/Footer.jsx'
 import Header from './common/header/Header';
 import { BrowserRouter, Route, Routes} from "react-router-dom"
 import Pages from './pages/Pages';
-import Data from './components/flashDeals/Data';
-import { useState } from 'react';
+//import Data from './components/flashDeals/Data';
+import { useState, useEffect } from 'react';
 import Cart from './common/cart/Cart';
 import Main from './components/Home/Main';
 
 
 function App() {
   //paso1: obtener datos de la base de datos
-  const { productItems} = Data;
+
+  const [updateProducts,setUpdateProducts] = useState(false)
+  const [productItems, setDataProducts] = useState([]);
+
+  useEffect(() => {
+    getData();
+  }, [updateProducts]);
+
+  function getData() {
+    fetch("http://localhost:4000/api/products")
+      .then((resp) => resp.json())
+      .then((resp) => {
+        return setDataProducts(resp.productos)})
+      .catch((err) => console.log(err));
+  }
 
   const [cartItem, setCardItem] = useState([])
 

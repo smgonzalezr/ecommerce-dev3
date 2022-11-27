@@ -1,11 +1,13 @@
 //crear recursos que permita usar la libreria express:...
 const express = require ("express");
+const cors = require("cors");
 
 // crear una constante que se llame app:... objeto app con caracteristicas de express...
 const app = express();
 
 //usar herramientas json:...
 app.use(express.json());
+app.use(cors());
 
 //importar rutas...
 const products = require("./routes/products");

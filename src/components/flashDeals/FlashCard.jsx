@@ -39,44 +39,46 @@ const FlashCard = ({productItems, addToCart}) => {
       }
     return (
         <>
-         <Slider {...settings}>
+        <Slider {...settings}>
         {
-            productItems.map((productItems) => {
-                return (
-                    <div className="box">
-            <div className="product mtop">
-                <div className="img">
-                    <span className="discount">{productItems.discount}% Off</span>
-                    <img src={productItems.cover} alt="" />
-                    <div className="product-like">
-                        <label>0</label> <br />
-                        <i className='fa-regular fa-heart' onClick={increment}></i>
+        productItems.map((productItems, index) => {
+            return (
+                <div key={index} className="box">
+                    <div className="product mtop">
+                        <div className="img">
+                            <span className="discount">{productItems.category}</span>
+                            <img src={productItems.image} alt="" />
+                            <div className="product-like">
+                                <label>0</label> <br />
+                                <i className='fa-regular fa-heart' onClick={increment}></i>
+                            </div>
+                        </div>
+                        <div className="product-details">
+                            <h3>{productItems.name}</h3>
+                            <div className="rate">
+                                <i className="fa fa-star"></i>
+                                <i className="fa fa-star"></i>
+                                <i className="fa fa-star"></i>
+                                <i className="fa fa-star"></i>
+                                <i className="fa fa-star"></i>
+                            </div>
+                            <h3>{productItems.description}</h3>
+                            <div className="price">
+                                <h4>{productItems.price}</h4>
+                                <button onClick={() => addToCart(productItems)}>
+                                    <i className="fa fa-plus"></i>
+                                </button>
+                            </div>
+                        </div>
                     </div>
                 </div>
-                <div className="product-details">
-                    <h3>{productItems.name}</h3>
-                    <div className="rate">
-                        <i className="fa fa-star"></i>
-                        <i className="fa fa-star"></i>
-                        <i className="fa fa-star"></i>
-                        <i className="fa fa-star"></i>
-                        <i className="fa fa-star"></i>
-                    </div>
-                    <div className="price">
-                        <h4>{productItems.price}</h4>
-                        <button onClick={() => addToCart(productItems)}>
-                            <i className="fa fa-plus"></i>
-                        </button>
-                    </div>
-                </div>
-            </div>
-        </div>
-                )
-            })
+            )
+        })
         }
         </Slider>
+
         </>
-    )
-}
+    );
+};
 
 export default FlashCard
